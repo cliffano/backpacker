@@ -1,0 +1,9 @@
+---
+- name: Provision backpackerexample
+  hosts: localhost
+  tasks:
+    - name: Install backpackerexample Python package
+      ansible.builtin.pip:
+        # Using https://pypi.org/project/certilizer/
+        # since there's no package named bakcpackerexample
+        name: 'certilizer=={{ backpackerexample_version }}'

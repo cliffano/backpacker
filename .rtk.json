@@ -1,0 +1,15 @@
+{
+  "resources": [
+    {
+      "path": "src/Makefile-backpacker",
+      "type": "makefile",
+      "params": {
+        "variable": "BACKPACKER_VERSION"
+      }
+    },
+    {
+      "path": "CHANGELOG.md",
+      "type": "keep-a-changelog"
+    }
+  ]
+}
