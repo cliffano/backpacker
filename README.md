@@ -7,9 +7,9 @@ Backpacker
 ----------
 
 Backpacker is a Makefile for building Packer-based machine images.
-It provides utility targets for styling, linting, building, testing, and documenting Python packages.
+It provides utility targets for linting, building, and testing the machine images.
 
-Have a look at [BackpackerExample](examples/) as an example project which uses backpacker.
+Have a look at [BackpackerExample](examples/) as an example project which uses Backpacker.
 
 Installation
 ------------
@@ -26,7 +26,8 @@ Create backpacker configuration file called `backpacker.yml` with contains the f
 
 | Property | Description | Example |
 |----------|-------------|---------|
-| package_name | The name of the Python package | `somepackage` |
+| image.name | The name of the machine image | `someimage` |
+| image.version | The version of the machine image | `1.2.3` |
 | author | The author of the package | `Some Author` |
 
 Usage
@@ -36,36 +37,28 @@ The following targets are available:
 
 | Target | Description |
 |--------|-------------|
-| ci | CI target to be executed by CI/CD tool, end to end build of the Python package |
-| stage | Ensure stage directory exists |
-| clean | Remove all temporary (staged, generated, cached) files |
-| deps | Retrieve package dependencies using [Poetry](https://python-poetry.org/) |
-| deps-upgrade | Upgrade package dependencies using [Poetry](https://python-poetry.org/) |
+| ci | CI target to be executed by CI/CD tool, end to end build of the machine package |
+| stage | Ensure logs directory exists |
+| clean | Remove all temporary (staged, generated) files |
+| deps | Retrieve Python dependencies and Packer plugins |
+| deps-upgrade | Upgrade Python dependencies |
 | deps-extra-apt | Install extra tools using `apt`: Python [VirtualEnv](https://virtualenv.pypa.io/) |
-| rmdeps | Remove poetry.lock, requirements.txt, and .venv/ directory |
+| rmdeps | Remove .venv/ directory |
 | update-to-latest | Update Makefile to the latest version tag |
 | update-to-main | Update Makefile to the main branch |
 | update-to-version | Update Makefile to the version defined in `TARGET_backpacker_VERSION` parameter |
-| style | Run code styling against source and test code using [black](https://black.readthedocs.io/en/stable/) |
-| lint | Run lint checks against source and test code using [pylint](https://www.pylint.org/), then generate lint report using [pylint_report](https://pypi.org/project/pylint-report/) |
-| complexity | Run complexity checks against source and test code using [flake8-cognitive-complexity](https://github.com/Melevir/flake8-cognitive-complexity), then generate complexity report |
-| test | Run unit testing using [pytest](https://pytest.org), then generate test report |
-| test-integration | Run integration testing using [pytest](https://pytest.org), then generate test report |
-| test-examples | Run example scripts under `examples/` directory |
-| coverage | Run coverage checks using [Coverage.py](https://github.com/nedbat/coveragepy), then generate coverage report |
+| lint | Run lint checks against source and test code using [Packer validate](https://developer.hashicorp.com/packer/docs/commands/validate), [Ansible Lint](https://ansible.readthedocs.io/projects/lint/), [yamllint](https://github.com/adrienverge/yamllint), json.tool, [ShellCheck](https://github.com/koalaman/shellcheck) |
+| test | Alias to test-docker |
+| test-docker | Test Docker image with [Testinfra](https://testinfra.readthedocs.io/en/latest/) |
 | release-major | Create a major release using [rtk](https://github.com/cliffano/rtk) |
 | release-minor | Create a minor release using [rtk](https://github.com/cliffano/rtk) |
 | release-patch | Create a patch release using [rtk](https://github.com/cliffano/rtk) |
-| package | Build the Python package using [Poetry](https://python-poetry.org/) |
-| install | Install the built package using [Poetry](https://python-poetry.org/). For CLI, the binary is available at `/opt/poetry-venv/bin/` |
-| uninstall | Uninstall the package using [Pip](https://pypi.org/project/pip/) |
-| reinstall | Uninstall, rebuild, and then install the package again |
-| publish | Publish package to PyPi using [Poetry](https://python-poetry.org/) |
-| doc | Generate package documentation using [Sphinx](https://www.sphinx-doc.org/) |
+| build-docker | Build Docker image using [Packer](https://developer.hashicorp.com/packer) |
+| publish-docker | Publish Docker image to [Docker Hub](https://hub.docker.com/) |
 
 Colophon
 --------
 
 Related Projects:
 
-* [generator-python](https://github.com/cliffano/generator-python) - Python projects generator using Plop
+* [generator-packer](https://github.com/cliffano/generator-packer) - Packer machine image projects generator using Plop
