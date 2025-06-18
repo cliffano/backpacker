@@ -4,7 +4,7 @@
 ################################################################
 
 # Backpacker's version number
-BACKPACKER_VERSION = 0.10.0
+BACKPACKER_VERSION = 0.10.1-pre.0
 
 ################################################################
 # User configuration variables
