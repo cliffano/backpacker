@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Add dockerhub.username configuration for publishing Docker machine image
+
 ### Removed
 - Remove unnecessary avatar from example
 

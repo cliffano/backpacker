@@ -3,3 +3,5 @@ image:
   name: backpackerexample
   version: '1.2.3'
 author: The Backpacker
+dockerhub:
+  username: cliffano

@@ -29,6 +29,7 @@ Create backpacker configuration file called `backpacker.yml` with contains the f
 | image.name | The name of the machine image | `someimage` |
 | image.version | The version of the machine image | `1.2.3` |
 | author | The author of the package | `Some Author` |
+| dockerhub.username | The username of Docker Hub account to publish the Docker machine image to | `cliffano` |
 
 Usage
 -----
