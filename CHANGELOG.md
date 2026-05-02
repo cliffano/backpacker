@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Add JSON and Markdown lint
+- Add deps-extra-apt Makefile target
+
+### Changed
+- Update README format to be mdl compliant
+
 ## 1.0.0 - 2025-06-19
 ### Added
 - Add dockerhub.username configuration for publishing Docker machine image
