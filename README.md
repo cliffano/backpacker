@@ -1,26 +1,22 @@
-<img align="right" src="https://raw.github.com/cliffano/backpacker/master/avatar.jpg" alt="Avatar"/>
+![Avatar](avatar.jpg)
 
 [![Build Status](https://github.com/cliffano/backpacker/actions/workflows/ci-workflow.yaml/badge.svg)](https://github.com/cliffano/backpacker/actions/workflows/ci-workflow.yaml)
-<br/>
 
-Backpacker
-----------
+# Backpacker
 
 Backpacker is a Makefile for building Packer-based machine images.
 It provides utility targets for linting, building, and testing the machine images.
 
 Have a look at [BackpackerExample](examples/) as an example project which uses Backpacker.
 
-Installation
-------------
+## Installation
 
 1. Download `src/Makefile-backpacker` as the `Makefile` of your project:
     `curl https://raw.githubusercontent.com/cliffano/backpacker/main/src/Makefile-backpacker -o Makefile`
 2. Create configuration file `backpacker.yml` with properties described in [Configuration](#configuration) section
 3. Run the available `Makefile` targets described in [Usage](#usage) section
 
-Configuration
--------------
+## Configuration
 
 Create backpacker configuration file called `backpacker.yml` with contains the following properties:
 
@@ -31,8 +27,7 @@ Create backpacker configuration file called `backpacker.yml` with contains the f
 | author | The author of the package | `Some Author` |
 | dockerhub.username | The username of Docker Hub account to publish the Docker machine image to | `cliffano` |
 
-Usage
------
+## Usage
 
 The following targets are available:
 
@@ -57,8 +52,7 @@ The following targets are available:
 | build-docker | Build Docker image using [Packer](https://developer.hashicorp.com/packer) |
 | publish-docker | Publish Docker image to [Docker Hub](https://hub.docker.com/) |
 
-Colophon
---------
+## Colophon
 
 Related Projects:
 
