@@ -5,11 +5,11 @@ jobs:
   build:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           set-safe-directory: ${{ github.workspace }}
-      - uses: cliffano/command-docker-action@v1.4.0
+      - uses: cliffano/command-docker-action@v2.0.0
         with:
-          command: 'make deps-extra-apt ci'
-          image: cliffano/studio
+          command: 'make deps ci'
+          image: cliffano/studio:3.8.0
           shell: bash
