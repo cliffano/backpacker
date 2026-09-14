@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Update README format to be mdl compliant
+- Parameterise UPDATE_GH_ID
 
 ## 1.0.0 - 2025-06-19
 ### Added
