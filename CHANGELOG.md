@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 
 ### Added
+- Add update-examples capability.
 - Add JSON and Markdown lint
 - Add deps-extra-apt Makefile target
 
