@@ -31,9 +31,9 @@ AUTHOR ?= $(shell yq .author backpacker.yml)
 DOCKERHUB_USERNAME ?= $(shell yq .dockerhub.username backpacker.yml)
 
 $(info ################################################################)
-$(info Building Python package using backpacker with user configurations:)
-$(info - Image name: ${IMAGE_NAME})
-$(info - Author: ${AUTHOR})
+$(info Building Python package using Backpacker with user configurations...)
+$(info - Image name = ${IMAGE_NAME})
+$(info - Author = ${AUTHOR})
 
 define python_venv
 	. .venv/bin/activate && $(1)
