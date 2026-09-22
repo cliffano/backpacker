@@ -57,6 +57,7 @@ clean:
 
 # Retrieve the Pyhon package and Packer plugin dependencies
 deps:
+	$(call deps_extra)
 	python3 -m venv .venv
 	$(call python_venv,python3 -m pip install -r requirements.txt)
 	packer plugins install github.com/hashicorp/docker 1.1.1
@@ -69,7 +70,7 @@ deps-upgrade:
 
 deps-extra-apt:
 	apt-get update
-	apt-get install -y python3-venv
+	apt-get install -y python3-venv libffi-dev
 
 rmdeps:
 	rm -rf .venv/
