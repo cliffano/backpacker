@@ -49,7 +49,7 @@ ci: clean deps lint build-docker test-docker
 
 # Ensure stage directory exists
 stage:
-	mkdir -p logs
+	mkdir -p stage/ logs/
 
 # Remove all temporary (staged, generated, cached) files
 clean:
