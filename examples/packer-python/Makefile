@@ -102,6 +102,13 @@ test: test-docker
 test-docker:
 	$(call python_venv,py.test -v test/testinfra/docker.py)
 
+test-examples:
+	mkdir -p stage/test-examples/
+	cd examples && \
+	for f in *.sh; do \
+	  bash -x "$$f"; \
+	done
+
 ################################################################
 # Release targets
 
@@ -132,4 +139,4 @@ publish-docker:
 
 ################################################################
 
-.PHONY: all ci clean stage deps lint build-docker test test-docker publish-docker release-major release-minor release-patch
+.PHONY: all ci clean stage deps lint build-docker test test-docker test-examples publish-docker release-major release-minor release-patch
