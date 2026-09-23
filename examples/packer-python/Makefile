@@ -4,7 +4,7 @@
 ################################################################
 
 # Backpacker info
-BACKPACKER_VERSION = 1.0.1-pre.0
+BACKPACKER_VERSION = 1.1.0
 
 UPDATE_GH_ID = cliffano
 UPDATE_MAKEFILE = backpacker

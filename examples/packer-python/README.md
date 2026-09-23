@@ -66,5 +66,4 @@ Lowercase: hello packer
 Build reports:
 
 * [Build report](https://cliffano.github.io/backpackerexample/index.html)
-
 <!-- END:BUILD_REPORTS -->
