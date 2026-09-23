@@ -227,4 +227,4 @@ release-patch:
 
 ################################################################
 
-.PHONY: all ci stage clean deps deps-upgrade deps-extra-apt rmdeps lint test test-docker test-examples build-docker publish-docker update-to-latest update-to-main update-to-version update-dotfiles update-partials release-major release-minor release-patch
+.PHONY: $(1) all ci stage clean deps deps-upgrade deps-extra-apt rmdeps lint test test-docker test-examples build-docker publish-docker update-to-latest update-to-main update-to-version update-dotfiles update-partials release-major release-minor release-patch
