@@ -14,42 +14,46 @@
 
 BackpackerExample is an example Packer-built machine image for backpacker.
 
-It installs the [certilizer](https://github.com/cliffano/certilizer) CLI on top of
-`python:3.12-alpine3.22`, used here as a stand-in since there's no real
-`backpackerexample` package to install.
+This image provides `backpackerexample`, a command-line message transformer that
+prints the original message plus reverse, uppercase, and lowercase variants.
 
 ## Installation
 
-Pull the image from Docker Hub:
+Pull the Docker image from Docker Hub:
 
 ```shell
 docker pull cliffano/backpackerexample
 ```
 
-Or alternatively, build the image yourself:
+Or alternatively, you can build the Docker image locally:
 
 ```shell
 git clone https://github.com/cliffano/backpackerexample
 cd backpackerexample
-make deps build-docker
-```
-
-An image with `cliffano/backpackerexample` repository and `latest` tag should show up:
-
-```text
-docker images
-
-REPOSITORY                   TAG      IMAGE ID       CREATED         SIZE
-cliffano/backpackerexample   1.2.3    50f465597fd9   2 minutes ago   180MB
-cliffano/backpackerexample   latest   50f465597fd9   2 minutes ago   180MB
+make build-docker
 ```
 
 ## Usage
 
-Run a container using the cliffano/backpackerexample image:
+Run container using default message (`Hello World`):
 
 ```shell
-docker run --rm cliffano/backpackerexample --help
+docker run --rm cliffano/backpackerexample
+```
+
+Run container using a custom message:
+
+```shell
+docker run --rm cliffano/backpackerexample --message 'Hello Packer'
+```
+
+Example output:
+
+```yaml
+Original: Hello Packer
+Reverse: rekcaP olleH
+Uppercase: HELLO PACKER
+Lowercase: hello packer
 ```
 
 ## Colophon

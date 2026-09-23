@@ -3,15 +3,26 @@ set -o errexit
 set -o nounset
 
 printf "\n\n========================================\n"
-printf "Run the built Docker image and verify its CLI\n"
+printf "Run the built Docker image and verify its message transformation\n"
 
 image="cliffano/backpackerexample:latest"
-output="$(docker run --rm "$image" --help)"
+output="$(docker run --rm "$image" --message 'Hello Packer')"
 
-expected_substring="Usage: certilizer [OPTIONS]"
-if [[ "$output" != *"$expected_substring"* ]]; then
-  printf "FAIL: docker run %s --help - expected output to contain '%s', got:\n%s\n" "$image" "$expected_substring" "$output"
-  exit 1
-fi
+expected_original="Original: Hello Packer"
+expected_reverse="Reverse: rekcaP olleH"
+expected_uppercase="Uppercase: HELLO PACKER"
+expected_lowercase="Lowercase: hello packer"
 
-printf "OK: %s responded with expected usage output\n" "$image"
+check_output() {
+  local label="$1" expected="$2"
+  if [[ "$output" != *"$expected"* ]]; then
+    printf "FAIL: %s - expected output to contain '%s', got:\n%s\n" "$label" "$expected" "$output"
+    exit 1
+  fi
+  printf "OK: %s found in output\n" "$expected"
+}
+
+check_output "message_original" "$expected_original"
+check_output "message_reverse" "$expected_reverse"
+check_output "message_uppercase" "$expected_uppercase"
+check_output "message_lowercase" "$expected_lowercase"

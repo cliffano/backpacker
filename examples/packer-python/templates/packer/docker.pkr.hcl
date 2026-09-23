@@ -18,7 +18,7 @@ variable "docker_source" {
 
 variable "tmp_dir" {
   type    = string
-  default = "/tmp/packer-backpackerexample"
+  default = "/tmp/backpackerexample"
 }
 
 variable "version" {
@@ -43,7 +43,8 @@ source "docker" "studio" {
   changes = [
     "ENV LANG en_US.UTF-8",
     "ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
-    "ENTRYPOINT [\"certilizer\"]"
+    "ENTRYPOINT [\"backpackerexample\"]",
+    "CMD []"
   ]
 }
 
