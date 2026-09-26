@@ -1,5 +1,5 @@
 ID := backpacker
-COMPONENTS := packer-python
+COMPONENTS := packer-python packer-node
 MAKEFILE_NAME := Makefile-$(ID)
 TARGET_VERSION_VARIABLE := TARGET_$(shell echo $(ID) | tr '[:lower:]-' '[:upper:]_')_VERSION
 
