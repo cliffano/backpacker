@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Add docker username and image name parameters
+
 ## 1.2.0 - 2026-09-26
 ### Added
 - Add packer-node component support

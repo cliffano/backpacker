@@ -17,3 +17,5 @@ generator:
     github_id: cliffano
     github_repo: backpackerexample
     github_token_prefix: STUDIO
+    image_name: backpackerexample
+    dockerhub_username: cliffano
