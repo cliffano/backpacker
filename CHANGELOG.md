@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+- Upgrade Ubuntu to 26.04
+- Upgrade cliffano/studio to 4.0.0
+
 ## 1.3.0 - 2026-09-30
 ### Added
 - Add docker username and image name parameters
