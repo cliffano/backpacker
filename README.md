@@ -1,6 +1,7 @@
 ![Avatar](avatar.jpg)
 
 [![Build Status](https://github.com/cliffano/backpacker/actions/workflows/ci-workflow.yaml/badge.svg)](https://github.com/cliffano/backpacker/actions/workflows/ci-workflow.yaml)
+[![Code Scanning Status](https://github.com/cliffano/backpacker/workflows/CodeQL/badge.svg)](https://github.com/cliffano/backpacker/actions?query=workflow%3ACodeQL)
 
 # Backpacker
 
